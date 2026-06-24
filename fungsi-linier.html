@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungsi Linier - MathEdu</title>
+    <link rel="stylesheet" href="fungsi-linier.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="page-loading">
+    <!-- Page Transition Overlay - LOGO.PNG VERSION -->
+    <div class="page-overlay" id="pageOverlay">
+        <!-- Animated Background Particles -->
+        <div class="overlay-particles">
+            <div class="overlay-particle"></div>
+            <div class="overlay-particle"></div>
+            <div class="overlay-particle"></div>
+            <div class="overlay-particle"></div>
+            <div class="overlay-particle"></div>
+            <div class="overlay-particle"></div>
+            <div class="overlay-particle"></div>
+            <div class="overlay-particle"></div>
+        </div>
+
+        <!-- Radial Glow -->
+        <div class="overlay-glow"></div>
+
+        <!-- Main Content -->
+        <div class="overlay-content">
+            <!-- Logo Container -->
+            <div class="overlay-logo-wrapper">
+                <!-- Rotating Ring -->
+                <div class="logo-ring"></div>
+                <div class="logo-ring logo-ring-2"></div>
+                
+                <!-- Logo Image -->
+                <div class="overlay-logo">
+                    <img src="logo.png" alt="MathEdu Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback">
+                        <svg viewBox="0 0 60 60" fill="none">
+                            <rect width="60" height="60" rx="16" fill="url(#logoGrad)"/>
+                            <text x="10" y="42" font-family="Inter" font-weight="900" font-size="32" fill="white">√x</text>
+                            <defs>
+                                <linearGradient id="logoGrad" x1="0" y1="0" x2="60" y2="60">
+                                    <stop offset="0%" stop-color="#00d4ff"/>
+                                    <stop offset="100%" stop-color="#0099cc"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Text -->
+            <div class="overlay-text-wrapper">
+                <div class="overlay-text">Memuat Fungsi Linier</div>
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Background Effects -->
+    <div class="bg-effects">
+        <div class="bg-glow bg-glow-cyan"></div>
+        <div class="bg-glow bg-glow-purple"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Floating Formulas -->
+    <div class="floating-formulas">
+        <div class="formula-item">y = ax + b</div>
+        <div class="formula-item">m = Δy/Δx</div>
+        <div class="formula-item">f(x)</div>
+        <div class="formula-item">y = mx + c</div>
+        <div class="formula-item">a = slope</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo nav-transition">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="MathEdu" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <svg viewBox="0 0 32 32" fill="none" style="display:none;">
+                        <path d="M8 24V12C8 10 10 8 12 8H20" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M12 24V16C12 14 14 12 16 12H22" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round"/>
+                        <text x="18" y="26" font-family="Inter" font-weight="800" font-size="14" fill="#00d4ff">x</text>
+                    </svg>
+                </div>
+                <span class="logo-text">MathEdu</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="home.html" class="nav-link nav-transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Home</span></a></li>
+                <li><a href="fungsi-linier.html" class="nav-link active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg><span>Fungsi Linier</span></a></li>
+                <li><a href="fungsi-kuadrat.html" class="nav-link nav-transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 4 10 8 10 8 6 12 6 12 14 16 14 16 18 20 18 20 10"></polyline></svg><span>Fungsi Kuadrat</span></a></li>
+                <li><a href="statistika.html" class="nav-link nav-transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg><span>Statistika</span></a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="index.html" class="btn-back nav-transition">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    <span>Landing</span>
+                </a>
+            </div>
+
+            <button class="nav-hamburger" id="navHamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="breadcrumb">
+                        <a href="home.html" class="nav-transition">Home</a>
+                        <span>/</span>
+                        <span class="current">Fungsi Linier</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Fungsi <span class="gradient-text">Linier</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Pelajari grafik garis lurus, persamaan linear, dan aplikasinya dengan visualisasi interaktif
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theory Section -->
+        <section class="theory-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Pengertian Fungsi Linier</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="theory-grid">
+                    <div class="theory-card">
+                        <div class="theory-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </div>
+                        <h3>Definisi</h3>
+                        <p>Fungsi linier adalah fungsi matematika yang grafiknya berbentuk garis lurus. Fungsi ini memiliki bentuk umum <strong>f(x) = ax + b</strong> atau <strong>y = mx + c</strong>.</p>
+                    </div>
+
+                    <div class="theory-card">
+                        <div class="theory-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"></path></svg>
+                        </div>
+                        <h3>Komponen</h3>
+                        <ul class="theory-list">
+                            <li><strong>a/m</strong> = koefisien arah (gradien/slope)</li>
+                            <li><strong>b/c</strong> = konstanta (titik potong sumbu y)</li>
+                            <li><strong>x</strong> = variabel bebas</li>
+                            <li><strong>y</strong> = variabel terikat</li>
+                        </ul>
+                    </div>
+
+                    <div class="theory-card">
+                        <div class="theory-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <h3>Gradien</h3>
+                        <p>Gradien (m) menunjukkan kemiringan garis. Rumus: <strong>m = (y₂ - y₁)/(x₂ - x₁)</strong> atau <strong>m = Δy/Δx</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Graph Section -->
+        <section class="interactive-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Grafik Interaktif</h2>
+                    <p class="section-subtitle">Input nilai koefisien dan lihat grafiknya secara real-time</p>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="graph-container">
+                    <!-- Controls -->
+                    <div class="graph-controls">
+                        <div class="control-group">
+                            <label for="inputA">Koefisien a (Gradien)</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="inputA" value="2" step="0.5" min="-10" max="10">
+                                <div class="input-buttons">
+                                    <button class="btn-adjust" data-target="inputA" data-value="-1">−</button>
+                                    <button class="btn-adjust" data-target="inputA" data-value="1">+</button>
+                                </div>
+                            </div>
+                            <input type="range" id="sliderA" min="-10" max="10" step="0.5" value="2">
+                        </div>
+
+                        <div class="control-group">
+                            <label for="inputB">Konstanta b</label>
+                            <div class="input-wrapper">
+                                <input type="number" id="inputB" value="1" step="0.5" min="-10" max="10">
+                                <div class="input-buttons">
+                                    <button class="btn-adjust" data-target="inputB" data-value="-1">−</button>
+                                    <button class="btn-adjust" data-target="inputB" data-value="1">+</button>
+                                </div>
+                            </div>
+                            <input type="range" id="sliderB" min="-10" max="10" step="0.5" value="1">
+                        </div>
+
+                        <div class="equation-display">
+                            <div class="equation-label">Persamaan:</div>
+                            <div class="equation-value" id="equationValue">y = 2x + 1</div>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn-primary" id="btnDraw">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                Gambar Grafik
+                            </button>
+                            <button class="btn-secondary" id="btnReset">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                                Reset
+                            </button>
+                        </div>
+
+                        <div class="quick-presets">
+                            <div class="preset-label">Contoh Cepat:</div>
+                            <div class="preset-buttons">
+                                <button class="btn-preset" data-a="1" data-b="0">y = x</button>
+                                <button class="btn-preset" data-a="2" data-b="3">y = 2x + 3</button>
+                                <button class="btn-preset" data-a="-1" data-b="5">y = -x + 5</button>
+                                <button class="btn-preset" data-a="0.5" data-b="-2">y = 0.5x - 2</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canvas -->
+                    <div class="graph-canvas-wrapper">
+                        <canvas id="graphCanvas"></canvas>
+                        <div class="canvas-info">
+                            <div class="info-item">
+                                <span class="info-label">Gradien (m):</span>
+                                <span class="info-value" id="infoGradient">2</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Titik Potong Y:</span>
+                                <span class="info-value" id="infoIntercept">(0, 1)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Titik Potong X:</span>
+                                <span class="info-value" id="infoXIntercept">(-0.5, 0)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solver Section -->
+        <section class="solver-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Penyelesaian Fungsi Linier</h2>
+                    <p class="section-subtitle">Masukkan nilai x untuk menghitung nilai y</p>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="solver-container">
+                    <div class="solver-input-group">
+                        <label for="inputX">Masukkan nilai x:</label>
+                        <div class="solver-input-wrapper">
+                            <input type="number" id="inputX" placeholder="Contoh: 3" step="any">
+                            <button class="btn-calculate" id="btnCalculate">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                Hitung
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="solver-steps" id="solverSteps">
+                        <div class="step-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                            <p>Masukkan nilai x dan klik Hitung untuk melihat langkah penyelesaian</p>
+                        </div>
+                    </div>
+
+                    <div class="solver-result" id="solverResult">
+                        <div class="result-card">
+                            <div class="result-label">Hasil:</div>
+                            <div class="result-value" id="resultValue">-</div>
+                            <div class="result-coordinate" id="resultCoordinate">Koordinat: (x, y)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section class="examples-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contoh Soal & Pembahasan</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <span class="example-number">Contoh 1</span>
+                            <span class="example-difficulty easy">Mudah</span>
+                        </div>
+                        <div class="example-content">
+                            <p><strong>Soal:</strong> Tentukan gradien dan titik potong sumbu y dari fungsi y = 3x - 4</p>
+                            <div class="example-solution">
+                                <p><strong>Penyelesaian:</strong></p>
+                                <ul>
+                                    <li>Dari y = 3x - 4, kita dapat lihat:</li>
+                                    <li>Gradien (m) = <strong>3</strong></li>
+                                    <li>Titik potong sumbu y (b) = <strong>-4</strong></li>
+                                    <li>Jadi, garis memotong sumbu y di titik (0, -4)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-header">
+                            <span class="example-number">Contoh 2</span>
+                            <span class="example-difficulty medium">Sedang</span>
+                        </div>
+                        <div class="example-content">
+                            <p><strong>Soal:</strong> Tentukan persamaan garis yang melalui titik (2, 5) dan (4, 9)</p>
+                            <div class="example-solution">
+                                <p><strong>Penyelesaian:</strong></p>
+                                <ol>
+                                    <li>Hitung gradien: m = (y₂-y₁)/(x₂-x₁) = (9-5)/(4-2) = 4/2 = <strong>2</strong></li>
+                                    <li>Gunakan rumus: y - y₁ = m(x - x₁)</li>
+                                    <li>y - 5 = 2(x - 2)</li>
+                                    <li>y - 5 = 2x - 4</li>
+                                    <li>y = 2x + 1</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-header">
+                            <span class="example-number">Contoh 3</span>
+                            <span class="example-difficulty hard">Sulit</span>
+                        </div>
+                        <div class="example-content">
+                            <p><strong>Soal:</strong> Sebuah garis melalui titik (1, 3) dan sejajar dengan garis y = 2x + 5. Tentukan persamaannya!</p>
+                            <div class="example-solution">
+                                <p><strong>Penyelesaian:</strong></p>
+                                <ol>
+                                    <li>Garis sejajar memiliki gradien sama: m = <strong>2</strong></li>
+                                    <li>Gunakan titik (1, 3): y - y₁ = m(x - x₁)</li>
+                                    <li>y - 3 = 2(x - 1)</li>
+                                    <li>y - 3 = 2x - 2</li>
+                                    <li>y = 2x + 1</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formula Reference -->
+        <section class="formula-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Rumus-Rumus Penting</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="formula-grid">
+                    <div class="formula-card">
+                        <div class="formula-title">Bentuk Umum</div>
+                        <div class="formula-content">y = ax + b</div>
+                        <div class="formula-desc">atau y = mx + c</div>
+                    </div>
+
+                    <div class="formula-card">
+                        <div class="formula-title">Gradien</div>
+                        <div class="formula-content">m = (y₂ - y₁)/(x₂ - x₁)</div>
+                        <div class="formula-desc">atau m = Δy/Δx</div>
+                    </div>
+
+                    <div class="formula-card">
+                        <div class="formula-title">Persamaan Garis</div>
+                        <div class="formula-content">y - y₁ = m(x - x₁)</div>
+                        <div class="formula-desc">melalui titik (x₁, y₁)</div>
+                    </div>
+
+                    <div class="formula-card">
+                        <div class="formula-title">Titik Potong Sumbu X</div>
+                        <div class="formula-content">x = -b/a</div>
+                        <div class="formula-desc">saat y = 0</div>
+                    </div>
+
+                    <div class="formula-card">
+                        <div class="formula-title">Titik Potong Sumbu Y</div>
+                        <div class="formula-content">y = b</div>
+                        <div class="formula-desc">saat x = 0, titik (0, b)</div>
+                    </div>
+
+                    <div class="formula-card">
+                        <div class="formula-title">Garis Sejajar</div>
+                        <div class="formula-content">m₁ = m₂</div>
+                        <div class="formula-desc">gradien sama</div>
+                    </div>
+
+                    <div class="formula-card">
+                        <div class="formula-title">Garis Tegak Lurus</div>
+                        <div class="formula-content">m₁ × m₂ = -1</div>
+                        <div class="formula-desc">perkalian gradien = -1</div>
+                    </div>
+
+                    <div class="formula-card">
+                        <div class="formula-title">Jarak 2 Titik</div>
+                        <div class="formula-content">d = √[(x₂-x₁)² + (y₂-y₁)²]</div>
+                        <div class="formula-desc">rumus Pythagoras</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="MathEdu" class="footer-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <svg viewBox="0 0 40 40" fill="none" style="display:none;">
+                            <rect width="40" height="40" rx="10" fill="url(#footerGrad)"/>
+                            <text x="8" y="28" font-family="Inter" font-weight="800" font-size="20" fill="white">√x</text>
+                            <defs>
+                                <linearGradient id="footerGrad" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#00d4ff"/>
+                                    <stop offset="100%" stop-color="#0099cc"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p>Belajar matematika dengan cara yang lebih menyenangkan dan interaktif.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigasi</h4>
+                        <a href="home.html" class="nav-transition">Home</a>
+                        <a href="fungsi-linier.html">Fungsi Linier</a>
+                        <a href="fungsi-kuadrat.html" class="nav-transition">Fungsi Kuadrat</a>
+                        <a href="statistika.html" class="nav-transition">Statistika</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Informasi</h4>
+                        <a href="index.html" class="nav-transition">Tentang</a>
+                        <a href="#">Panduan</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; AFHP 2026. Multiplying knowledge, preserving rights.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="fungsi-linier.js"></script>
+</body>
+</html>
